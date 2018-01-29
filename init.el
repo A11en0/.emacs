@@ -26,6 +26,7 @@
 		monokai-theme
 		;; solarized-theme
 		web-mode
+		popwin
 		) "Default packages")
 
  (setq package-selected-packages my/packages)
@@ -68,6 +69,10 @@
 
 (require 'org)
 (setq org-src-fontify-natively t)
+
+;;开启popwin
+(require 'popwin)
+(popwin-mode 1)
 
 ;;开启最近打开的文件功能
 (require 'recentf)
