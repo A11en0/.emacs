@@ -3,7 +3,7 @@
 
 (setq auto-save-default nil)
 
-(global-linum-mode t)
+(global-linum-mode 0)
 
 ;;开启最近打开的文件功能
 (recentf-mode 1)
