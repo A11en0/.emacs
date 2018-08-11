@@ -24,6 +24,8 @@
 		exec-path-from-shell
 		;; --- Themes ---
 		monokai-theme
+		zenburn-theme
+		dracula-theme
 		;; solarized-theme
 		web-mode
 		popwin
@@ -51,8 +53,11 @@
 (global-company-mode 1)
 
 ;;安装主题
-(add-to-list 'Allen/packages 'monokai-theme)
-(load-theme 'monokai 1)
+;;(add-to-list 'Allen/packages 'monokai-theme)
+;;(load-theme 'monokai 1)
+
+(add-to-list 'Allen/packages 'dracula-theme)
+(load-theme 'dracula 1)
 
 ;;强化删除空格
 (require 'hungry-delete)

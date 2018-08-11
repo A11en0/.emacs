@@ -1,0 +1,128 @@
+gcc t7.c 
+./a.out 
+gcc t7.c 
+./a.out 
+gcc t7.c 
+gcc t7.c 
+gcc t7.c 
+gcc t7.c 
+gcc t7.c 
+gcc t7.c 
+141
+gcc t7.c 
+gcc t7.c 
+gcc t7.c 
+gcc t7.c 
+./a.out 
+gcc t7.c 
+gcc t7.c 
+gcc t7.c 
+gcc t7.c 
+./a.out 
+gcc t7.c 
+./a.out 
+gcc t7.c 
+./a.out 
+gcc t7.c 
+./a.out 
+gcc t7.c 
+./a.out 
+gcc t7.c 
+t4.c:8:9: warning: implicit declaration of function ‘abs’ [-Wimplicit-function-declaration]oo
+o
+gcc t7.c 
+1
+gcc t7.c 
+gcc t7.c 
+./a.out 
+gcc t7.c 
+./a.out 
+gcc t7.c 
+./a.out 
+./a.out 
+gcc test.c 
+./a.out 
+gcc test.c 
+test.c:10:9: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+gcc test.c 
+./a.out 
+gcc test.c 
+gcc test.c 
+./a.out 
+gcc test.c 
+gcc test.c 
+gcc test.c 
+gcc test.c 
+./a.out 
+ls
+cat wordy 
+gcc test.c 
+./a.out 
+vi wordy 
+gcc test.c 
+./a.out 
+./a.out 
+gcc test.c 
+./a.out 
+gcc test.c 
+./a.out 
+gcc test.c 
+./a.out 
+k
+gcc test.c 
+gcc test.c 
+./a.out 
+gcc test.c 
+gcc test.c 
+/A
+./a.out 
+gcc test.c 
+./a.out 
+gcc test.c 
+./a.out 
+ls
+fdsavcx
+vcxzlll
+gcc t5.c 
+gcc t5.c -lm
+./a.out 
+./a.out 100
+./a.out 1000
+./a.out 10000
+gcc t1.c 
+gcc t1.c 
+gcc t1.c 
+gcc t1.c 
+gcc t1.c 
+cls
+clear
+
+
+gcc t1.c 
+gcc t1.c 
+gcc t1.c 
+gcc t1.c 
+gcc t1.c 
+gcc t1.c 
+gcc t1.c 
+gcc t1.c 
+gcc t1.c 
+./a.out 
+gcc t1.c 
+./a.out 
+gcc t1.c 
+./a.out 
+gcc t1.c 
+./a.out 
+gcc t1.c 
+./a.out 
+gcc t1.c 
+./a.out 
+gcc t1.c 
+gcc t2.c 
+python3 test.py 
+javac SWFU%2BProposed%2BSyllabus+20180110.xlsx 
+mv test.java SayHello.java
+javac SayHello.java 
+javac SayHello.java 
+java SayHello
