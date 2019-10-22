@@ -1,0 +1,10 @@
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*- 
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("org-refile-last-stored"
+ (filename . "~/code/datastructure/note.org")
+ (front-context-string . "** 动态规划四要素\nSTEP ")
+ (rear-context-string . "\n\n\n\n      \n\n	  \n")
+ (position . 120))
+)

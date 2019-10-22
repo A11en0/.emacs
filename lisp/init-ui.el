@@ -1,7 +1,10 @@
 ;;简化窗口
 (tool-bar-mode -1)
 (menu-bar-mode -1)
-(global-linum-mode 1)
+
+;;主题
+(add-to-list 'Allen/packages 'dracula-theme)
+(load-theme 'dracula 1)
 
 ;;关闭启动页面
 (setq inhibit-splash-screen 1)
