@@ -4,7 +4,7 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
-(add-to-list 'load-path "/Users/allen/.emacs.d/lisp/")
+(add-to-list 'load-path "~/.emacs.d/lisp/") 
 
 ;;快速打开配置文件
 (defun open-init-file()

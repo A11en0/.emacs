@@ -12,10 +12,16 @@
 (global-set-key (kbd "C-h f") 'counsel-describe-function)
 (global-set-key (kbd "C-h v") 'counsel-describe-variable)
 
-(global-set-key (kbd "<f2>") 'open-init-file)
-
+(global-set-key (kbd "<f2>") 'open-init-file
+)
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
+;; finding file in current git repo 
 (global-set-key (kbd "C-c p") 'counsel-git)
+
+(global-set-key (kbd "C-M-\\") 'indent-region-or-buffer)
+
+(global-set-key "\M-p"  'bs-cycle-previou)
+(global-set-key "\M-n"  'bs-cycle-next)
 
 (provide 'init-keybindings)

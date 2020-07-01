@@ -37,4 +37,12 @@
 (require 'popwin)
 (popwin-mode 1)
 
+(setq-default abbrev-mode t)
+(define-abbrev-table 'global-abbrev-table '(
+					    ;; Shifu
+					    ("8zl" "zilongshanren")
+					    ;; Tudi
+					    ("8lxy" "lixinyang")
+					   ))
+
 (provide 'init-better-defaults)

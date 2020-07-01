@@ -3,8 +3,11 @@
 (menu-bar-mode -1)
 
 ;;主题
-(add-to-list 'Allen/packages 'dracula-theme)
-(load-theme 'dracula 1)
+(add-to-list 'my/packages 'dracula-theme)
+(load-theme 'dracula t)
+
+;(add-to-list 'Allen/packages 'material-light)
+;(load-theme 'material-light t)
 
 ;;关闭启动页面
 (setq inhibit-splash-screen 1)

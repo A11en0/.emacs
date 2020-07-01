@@ -10,7 +10,7 @@
 (require 'cl)
 
 ;; Add Packages
-(defvar Allen/packages '(
+(defvar my/packages '(
 			 ;; --- Auto-completion ---
 			 company
 			 ;; --- Better Editor ---
@@ -41,17 +41,17 @@
 			 expand-region
 			 ) "Default packages")
 
-(setq package-selected-packages Allen/packages)
+(setq package-selected-packages my/packages)
 
-(defun Allen/packages-installed-p ()
-  (loop for pkg in Allen/packages
+(defun my/packages-installed-p ()
+  (loop for pkg in my/packages
 	when (not (package-installed-p pkg)) do (return nil)
 	finally (return t)))
 
-(unless (Allen/packages-installed-p)
+(unless (my/packages-installed-p)
   (message "%s" "Refreshing package database...")
   (package-refresh-contents)
-  (dolist (pkg Allen/packages)
+  (dolist (pkg my/packages)
     (when (not (package-installed-p pkg))
       (package-install pkg))))
 
@@ -80,13 +80,14 @@
   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
   (add-hook 'elpy-mode-hook 'flycheck-mode))
 
-(defun indent-buffer()
-  (interactive)
-  (indent-region (point-min) (point-max)))
-
 ;; 选中功能增强
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
+
+
+(defun indent-buffer()
+  (interactive)
+  (indent-region (point-min) (point-max)))
 
 ;; 块代码缩进
 (defun indent-region-or-buffer()
