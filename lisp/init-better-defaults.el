@@ -34,6 +34,8 @@
 (smartparens-global-mode t)
 (sp-local-pair '(emacs-lisp-mode lisp-interaction-mode) "'" nil :actions nil)
 
+(sp-local-pair 'emacs-lisp-mode "`" nil :actions nil)
+
 ;;关闭警告音
 (setq ring-bell-function 'ignore)
 
@@ -151,5 +153,8 @@
       (executable-interpret (read-shell-command "Run: " command)))))
 
 (define-key python-mode-map [f5] 'python/run-current-file)
+
+;; js2 flycheck
+(add-hook 'js2-mode-hook 'flycheck-mode)
 
 (provide 'init-better-defaults)

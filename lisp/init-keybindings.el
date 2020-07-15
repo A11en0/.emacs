@@ -26,10 +26,13 @@
 
 ;; 延迟加载 将dired模式下Enter键绑定为"选择文件"
 (with-eval-after-load 'dired
-    (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)) 
+  (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)) 
 
 ;; (global-set-key "\M-p"  'bs-cycle-previou)
 ;; (global-set-key "\M-n"  'bs-cycle-next)
+
+(global-set-key (kbd "M-p") 'previous-buffer)
+(global-set-key (kbd "M-n") 'next-buffer)
 
 (global-set-key "\M-;" 'comment-or-uncomment-region-or-line)
 
@@ -51,10 +54,22 @@
   (define-key company-active-map (kbd "M-n") nil)
   (define-key company-active-map (kbd "M-p") nil)
   (define-key company-active-map (kbd "C-n") #'company-select-next)
-  (define-key company-active-map (kbd "C-p") #'company-select-previous))
+  (define-key company-active-map (kbd "C-p") #'company-select-previous)
+
+  (define-key company-active-map (kbd "TAB") 'company-complete-common-or-cycle)
+  (define-key company-active-map (kbd "<tab>") 'company-complete-common-or-cycle)
+  (define-key company-active-map (kbd "S-TAB") 'company-select-previous)
+  (define-key company-active-map (kbd "<backtab>") 'company-select-previous))
 
 (global-set-key (kbd "M-s s") 'helm-do-ag-project-root)
 
+(global-set-key (kbd "C-c w") #'aya-create)
+(global-set-key (kbd "C-c y") #'aya-expand)
+
+;; org-capture 用来快速地记下心中一闪而过的某个想法
+(global-set-key (kbd "C-c c") 'org-capture)
+
+;; (global-set-key (kbd "C-w") 'backward-kill-word)
 (provide 'init-keybindings)
 
 

@@ -1,10 +1,16 @@
-2;; Added by Package.el.  This must come before configurations of
+;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
+
 (package-initialize)
 
-(add-to-list 'load-path "~/.emacs.d/lisp/") 
+(require 'cask "~/.cask/cask.el")
+(cask-initialize)    ; 类似于 package-initialize
+(require 'pallet)
+(pallet-mode t)      ; 激活 pallet, 在安装包时将 Cask 文件写入相应信息
+
+(add-to-list 'load-path "~/.emacs.d/lisp/")
 
 ;;快速打开配置文件
 (defun open-init-file()
@@ -21,15 +27,6 @@
 (require 'org-install)
 (require 'ob-tangle)
 (require 'init-keybindings)
+(require 'init-python)
 
 (load-file custom-file)
-
-
-
-
-
-
-
-
-
-

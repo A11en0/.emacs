@@ -3,7 +3,7 @@
 (menu-bar-mode -1)
 
 ;;主题
-(add-to-list 'my/packages 'dracula-theme)
+;;(add-to-list 'my/packages 'dracula-theme)
 (load-theme 'dracula t)
 
 ;(add-to-list 'Allen/packages 'material-light)

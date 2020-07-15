@@ -1,64 +1,69 @@
-(when (>= emacs-major-version 24)
-  (require 'package)
-  (package-initialize)
-  (setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
-			   ("melpa" . "http://elpa.emacs-china.org/melpa/"))))
-
-;; 注意 elpa.emacs-china.org 是 Emacs China 中文社区在国内搭建的一个 ELPA 镜像
-
 ;; cl - Common Lisp Extension
-(require 'cl)
+(require 'cl) 
 
-;; Add Packages
-(defvar my/packages '(
-			 ;; --- Auto-completion ---
-			 company
-			 ;; --- Better Editor ---
-			 hungry-delete
-			 counsel
-			 smartparens
-			 ;; --- Major Mode ---
-			 js2-mode
-			 js2-refactor
-			 ;; --- Minor Mode ---
-			 nodejs-repl
-			 exec-path-from-shell
-			 ;; --- Themes ---
-			 monokai-theme
-			 zenburn-theme
-			 dracula-theme
-			 ;; solarized-theme
-			 web-mode
-			 popwin
-			 elpy
-			 flycheck ;; add the flycheck package
-			 py-autopep8
-			 ein
-			 ;;LaTeX
-			 auctex
-			 yasnippet
-			 yasnippet-snippets
-			 anaconda-mode
-			 expand-region
-			 iedit
-			 fzf
-			 org-pomodoro
-			 helm-ag
-			 ) "Default packages")
+;; ;; 注意 elpa.emacs-china.org 是 Emacs China 中文社区在国内搭建的一个 ELPA 镜像
+;; (when (>= emacs-major-version 24)
+;;   (require 'package)
+;;   (package-initialize)
+;;   (setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
+;; 			   ("melpa" . "http://elpa.emacs-china.org/melpa/"))))
 
-(setq package-selected-packages my/packages)
+;; ;; Add Packages
+;; (defvar my/packages '(
+;; 			 ;; --- Auto-completion ---
+;; 			 company
+;; 			 ;; --- Better Editor ---
+;; 			 hungry-delete
+;; 			 counsel
+;; 			 smartparens
+;; 			 ;; --- Major Mode ---
+;; 			 js2-mode
+;; 			 js2-refactor
+;; 			 ;; --- Minor Mode ---
+;; 			 nodejs-repl
+;; 			 exec-path-from-shell
+;; 			 ;; --- Themes ---
+;; 			 monokai-theme
+;; 			 zenburn-theme
+;; 			 dracula-theme
+;; 			 ;; solarized-theme
+;; 			 web-mode
+;; 			 popwin
+;; 			 elpy
+;; 			 flycheck 
+;; 			 py-autopep8
+;; 			 ein
+;; 			 ;;LaTeX
+;; 			 auctex
+;; 			 yasnippet
+;; 			 yasnippet-snippets
+;; 			 ;;Some Useful tools
+;; 			 anaconda-mode
+;; 			 expand-region
+;; 			 iedit
+;; 			 fzf
+;; 			 org-pomodoro
+;; 			 helm-ag
+;; 			 auto-yasnippet
+;; 			 org-ref
+;; 			 helm-bibtex
+;; 			 pallet
+;; 			 ;;which-key
+;; 			 ) "Default packages")
 
-(defun my/packages-installed-p ()
-  (loop for pkg in my/packages
-	when (not (package-installed-p pkg)) do (return nil)
-	finally (return t)))
+;; (setq package-selected-packages my/packages)
 
-(unless (my/packages-installed-p)
-  (message "%s" "Refreshing package database...")
-  (package-refresh-contents)
-  (dolist (pkg my/packages)
-    (when (not (package-installed-p pkg))
-      (package-install pkg))))
+;; (defun my/packages-installed-p ()
+;;   (loop for pkg in my/packages
+;; 	when (not (package-installed-p pkg)) do (return nil)
+;; 	finally (return t)))
+
+;; (unless (my/packages-installed-p)
+;;   (message "%s" "Refreshing package database...")
+;;   (package-refresh-contents)
+;;   (dolist (pkg my/packages)
+;;     (when (not (package-installed-p pkg))
+;;       (package-install pkg))))
 
 ;;ivy
 (ivy-mode 1)
@@ -112,18 +117,14 @@
 (require 'py-autopep8)
 (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
 
-(when (require 'flycheck nil t)
-  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
-  (add-hook 'elpy-mode-hook 'flycheck-mode))
+;; (when (require 'flycheck nil t)
+;;   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+;;   (add-hook 'elpy-mode-hook 'flycheck-mode))
+
+;; (global-flycheck-mode)
 
 ;; 选中功能增强
 (require 'expand-region)
-
-;; Python anaconda 配置
-(add-hook 'python-mode-hook 'anaconda-mode)
-(add-hook 'python-mode-hook
-          (lambda ()
-            (set (make-local-variable 'company-bbdb) '(company-anaconda))))
 
 ;;yasnippet TAB自动补全插件
 (add-to-list 'load-path "~/.emacs.d/snippets")
@@ -157,13 +158,20 @@
 				   ("after" "\\s-*after\\s-*(\\s-*[\"']\\(.+\\)[\"']\\s-*,.*" 1)
 				   ("Function" "function[ \t]+\\([a-zA-Z0-9_$.]+\\)[ \t]*(" 1)
 				   ("Function" "^[ \t]*\\([a-zA-Z0-9_$.]+\\)[ \t]*=[ \t]*function[ \t]*(" 1)
-				   ("Function" "^var[ \t]*\\([a-zA-Z0-9_$.]+\\)[ \t]*=[ \t]*function[ \t]*(" 1)
+			 	   ("Function" "^var[ \t]*\\([a-zA-Z0-9_$.]+\\)[ \t]*=[ \t]*function[ \t]*(" 1)
 				   ("Function" "^[ \t]*\\([a-zA-Z0-9_$.]+\\)[ \t]*()[ \t]*{" 1)
 				   ("Function" "^[ \t]*\\([a-zA-Z0-9_$.]+\\)[ \t]*:[ \t]*function[ \t]*(" 1)
 				   ("Task" "[. \t]task([ \t]*['\"]\\([^'\"]+\\)" 1)))))
+
 (add-hook 'js2-mode-hook
 	      (lambda ()
 		(setq imenu-create-index-function 'js2-imenu-make-index)))
+
+(require 'pyim)
+(require 'pyim-basedict) ; 拼音词库设置，五笔用户 *不需要* 此行设置
+(pyim-basedict-enable)   ; 拼音词库，五笔用户 *不需要* 此行设置
+(setq default-input-method "pyim")
+;;(which-key-mode 1)
 
 (provide 'init-packages)
 
