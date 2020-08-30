@@ -69,6 +69,10 @@
 ;; org-capture 用来快速地记下心中一闪而过的某个想法
 (global-set-key (kbd "C-c c") 'org-capture)
 
+;; meghanada-exec-main
+(with-eval-after-load 'meghanada
+  (define-key meghanada-mode-map (kbd "C-c r") 'meghanada-exec-main))
+
 ;; (global-set-key (kbd "C-w") 'backward-kill-word)
 (provide 'init-keybindings)
 

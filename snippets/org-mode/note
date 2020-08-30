@@ -3,7 +3,7 @@
 # key: note
 # --
 #+TITLE: ${1: title}
-#+AUTHOR: A11en0
+#+AUTHOR: Yuhang Ge
 #+EMAIL:     g352415441@gmail.com
 #+LANGUAGE:  cn
 #+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:nil -:t f:t *:t <:t
@@ -42,6 +42,16 @@ more...
    - Now let's export a HTML file
    - See? Org-mode is easy. But you need more practice
 
+ \begin{equation}
+     x=\sqrt{b}
+ \end{equation}
+     
+ 如果 $a^2=b$ 并且 \( b=2 \), 那么或者 $$ a=+\sqrt{2} $$ 或者 \[ a=-\sqrt{2} \].
+     
+\begin{eqnarray}
+x & = & y + z \\
+& = & z + t
+\end{eqnarray}
 
-
-
+bibliographystyle:plain
+bibliography:~/org/ref/references.bib

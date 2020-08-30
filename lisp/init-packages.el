@@ -1,70 +1,6 @@
 ;; cl - Common Lisp Extension
 (require 'cl) 
 
-;; ;; 注意 elpa.emacs-china.org 是 Emacs China 中文社区在国内搭建的一个 ELPA 镜像
-;; (when (>= emacs-major-version 24)
-;;   (require 'package)
-;;   (package-initialize)
-;;   (setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
-;; 			   ("melpa" . "http://elpa.emacs-china.org/melpa/"))))
-
-;; ;; Add Packages
-;; (defvar my/packages '(
-;; 			 ;; --- Auto-completion ---
-;; 			 company
-;; 			 ;; --- Better Editor ---
-;; 			 hungry-delete
-;; 			 counsel
-;; 			 smartparens
-;; 			 ;; --- Major Mode ---
-;; 			 js2-mode
-;; 			 js2-refactor
-;; 			 ;; --- Minor Mode ---
-;; 			 nodejs-repl
-;; 			 exec-path-from-shell
-;; 			 ;; --- Themes ---
-;; 			 monokai-theme
-;; 			 zenburn-theme
-;; 			 dracula-theme
-;; 			 ;; solarized-theme
-;; 			 web-mode
-;; 			 popwin
-;; 			 elpy
-;; 			 flycheck 
-;; 			 py-autopep8
-;; 			 ein
-;; 			 ;;LaTeX
-;; 			 auctex
-;; 			 yasnippet
-;; 			 yasnippet-snippets
-;; 			 ;;Some Useful tools
-;; 			 anaconda-mode
-;; 			 expand-region
-;; 			 iedit
-;; 			 fzf
-;; 			 org-pomodoro
-;; 			 helm-ag
-;; 			 auto-yasnippet
-;; 			 org-ref
-;; 			 helm-bibtex
-;; 			 pallet
-;; 			 ;;which-key
-;; 			 ) "Default packages")
-
-;; (setq package-selected-packages my/packages)
-
-;; (defun my/packages-installed-p ()
-;;   (loop for pkg in my/packages
-;; 	when (not (package-installed-p pkg)) do (return nil)
-;; 	finally (return t)))
-
-;; (unless (my/packages-installed-p)
-;;   (message "%s" "Refreshing package database...")
-;;   (package-refresh-contents)
-;;   (dolist (pkg my/packages)
-;;     (when (not (package-installed-p pkg))
-;;       (package-install pkg))))
-
 ;;ivy
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
@@ -148,30 +84,76 @@
 
 ;; imenu增强
 (defun js2-imenu-make-index ()
-      (interactive)
-      (save-excursion
-	;; (setq imenu-generic-expression '((nil "describe\\(\"\\(.+\\)\"" 1)))
-	(imenu--generic-function '(("describe" "\\s-*describe\\s-*(\\s-*[\"']\\(.+\\)[\"']\\s-*,.*" 1)
-				   ("it" "\\s-*it\\s-*(\\s-*[\"']\\(.+\\)[\"']\\s-*,.*" 1)
-				   ("test" "\\s-*test\\s-*(\\s-*[\"']\\(.+\\)[\"']\\s-*,.*" 1)
-				   ("before" "\\s-*before\\s-*(\\s-*[\"']\\(.+\\)[\"']\\s-*,.*" 1)
-				   ("after" "\\s-*after\\s-*(\\s-*[\"']\\(.+\\)[\"']\\s-*,.*" 1)
-				   ("Function" "function[ \t]+\\([a-zA-Z0-9_$.]+\\)[ \t]*(" 1)
-				   ("Function" "^[ \t]*\\([a-zA-Z0-9_$.]+\\)[ \t]*=[ \t]*function[ \t]*(" 1)
-			 	   ("Function" "^var[ \t]*\\([a-zA-Z0-9_$.]+\\)[ \t]*=[ \t]*function[ \t]*(" 1)
-				   ("Function" "^[ \t]*\\([a-zA-Z0-9_$.]+\\)[ \t]*()[ \t]*{" 1)
-				   ("Function" "^[ \t]*\\([a-zA-Z0-9_$.]+\\)[ \t]*:[ \t]*function[ \t]*(" 1)
-				   ("Task" "[. \t]task([ \t]*['\"]\\([^'\"]+\\)" 1)))))
+  (interactive)
+  (save-excursion
+    ;; (setq imenu-generic-expression '((nil "describe\\(\"\\(.+\\)\"" 1)))
+    (imenu--generic-function '(("describe" "\\s-*describe\\s-*(\\s-*[\"']\\(.+\\)[\"']\\s-*,.*" 1)
+			       ("it" "\\s-*it\\s-*(\\s-*[\"']\\(.+\\)[\"']\\s-*,.*" 1)
+			       ("test" "\\s-*test\\s-*(\\s-*[\"']\\(.+\\)[\"']\\s-*,.*" 1)
+			       ("before" "\\s-*before\\s-*(\\s-*[\"']\\(.+\\)[\"']\\s-*,.*" 1)
+			       ("after" "\\s-*after\\s-*(\\s-*[\"']\\(.+\\)[\"']\\s-*,.*" 1)
+			       ("Function" "function[ \t]+\\([a-zA-Z0-9_$.]+\\)[ \t]*(" 1)
+			       ("Function" "^[ \t]*\\([a-zA-Z0-9_$.]+\\)[ \t]*=[ \t]*function[ \t]*(" 1)
+			       ("Function" "^var[ \t]*\\([a-zA-Z0-9_$.]+\\)[ \t]*=[ \t]*function[ \t]*(" 1)
+			       ("Function" "^[ \t]*\\([a-zA-Z0-9_$.]+\\)[ \t]*()[ \t]*{" 1)
+			       ("Function" "^[ \t]*\\([a-zA-Z0-9_$.]+\\)[ \t]*:[ \t]*function[ \t]*(" 1)
+			       ("Task" "[. \t]task([ \t]*['\"]\\([^'\"]+\\)" 1)))))
 
 (add-hook 'js2-mode-hook
-	      (lambda ()
-		(setq imenu-create-index-function 'js2-imenu-make-index)))
+	  (lambda ()
+	    (setq imenu-create-index-function 'js2-imenu-make-index)))
 
 (require 'pyim)
 (require 'pyim-basedict) ; 拼音词库设置，五笔用户 *不需要* 此行设置
 (pyim-basedict-enable)   ; 拼音词库，五笔用户 *不需要* 此行设置
 (setq default-input-method "pyim")
 ;;(which-key-mode 1)
+
+;; (require 'meghanada)
+;; (add-hook 'java-mode-hook
+;;           (lambda ()
+;;             ;; meghanada-mode on
+;;             (meghanada-mode t)
+;;             (flycheck-mode +1)
+;;             (setq c-basic-offset 2)
+;;             ;; use code format
+;;             (add-hook 'before-save-hook 'meghanada-code-beautify-before-save)))
+;; (cond
+;;    ((eq system-type 'windows-nt)
+;;     (setq meghanada-java-path (expand-file-name "bin/java.exe" (getenv "JAVA_HOME")))
+;;     (setq meghanada-maven-path "mvn.cmd"))
+;;    (t
+;;     (setq meghanada-java-path "java")
+;;     (setq meghanada-maven-path "mvn")))
+
+(require 'lsp-java)
+(add-hook 'java-mode-hook #'lsp)
+
+(setq lsp-java-java-path (substitute-in-file-name "$JAVA_HOME/bin/java"))
+
+;; (use-package projectile)
+(use-package flycheck)
+(use-package yasnippet :config (yas-global-mode))
+(use-package lsp-mode :hook ((lsp-mode . lsp-enable-which-key-integration))
+  :config (setq lsp-completion-enable-additional-text-edit nil))
+(use-package hydra)
+(use-package company)
+(use-package lsp-ui)
+(use-package which-key :config (which-key-mode))
+(use-package lsp-java :config (add-hook 'java-mode-hook 'lsp))
+(use-package dap-mode :after lsp-mode :config (dap-auto-configure-mode))
+(use-package dap-java :ensure nil)
+;; (use-package helm-lsp)
+(use-package helm
+  :config (helm-mode))
+(use-package lsp-treemacs)
+
+;; (use-package lsp-ui)
+;; (use-package lsp-java :config (add-hook 'java-mode-hook 'lsp)) ;
+;; (use-package dap-mode :after lsp-mode :config (dap-auto-configure-mode))
+
+;; (add-hook 'dap-stopped-hook
+;;           (lambda (arg) (call-interactively #'dap-hydra)))
 
 (provide 'init-packages)
 

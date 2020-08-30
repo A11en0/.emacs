@@ -80,8 +80,8 @@
 
 (setq org-export-backends (quote (ascii html icalendar latex md)))
 
-;; (setq browse-url-browser-function 'browse-url-generic
-;;       browse-url-generic-program "chromium-browser")
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "google-chrome-stable")
 
 (require 'org-ref)
 
@@ -104,11 +104,12 @@
 ;; alternative
 ;; (setq bibtex-completion-pdf-open-function 'org-open-file)
 
-;;(setq org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f"))
-
 ;;  org-mode 8.0
-(setq org-latex-pdf-process '("xelatex -interaction nonstopmode %f"
-                              "xelatex -interaction nonstopmode %f"))
+;; (setq org-latex-pdf-process '("xelatex -interaction nonstopmode %f"
+                              ;; "xelatex -interaction nonstopmode %f"))
+;; (setq org-latex-pdf-process (list "latexmk -shell-escape %f"))
+(setq org-latex-pdf-process (list
+   "latexmk -pdflatex='xelatex -shell-escape -interaction nonstopmode' -pdf -f  %f"))
 
 (use-package org-pdfview
   :init (pdf-tools-install)

@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: eqt
+# key: eqt
+# --
+ \begin{equation}
+     x=\sqrt{b}
+ \end{equation}
+     
+ 如果 $a^2=b$ 并且 \( b=2 \), 那么或者 $$ a=+\sqrt{2} $$ 或者 \[ a=-\sqrt{2} \].
+     
+\begin{eqnarray}
+x & = & y + z \\
+& = & z + t
+\end{eqnarray}

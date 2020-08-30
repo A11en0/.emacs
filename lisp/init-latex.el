@@ -10,4 +10,15 @@
 	(setq TeX-save-querynil )
 	(setq TeX-show-compilation t)))
 
+;; 加载 company-auctex 并初始化
+(use-package company-auctex
+  :config
+  (company-auctex-init))
+
+;; 在 LaTeX 模式被启用时，启用 cdlatex
+(use-package cdlatex
+  :config
+  (add-hook 'org-mode-hook 'turn-on-org-cdlatex)
+  (add-hook 'LaTeX-mode-hook 'turn-on-cdlatex))
+
 (provide 'init-latex)
