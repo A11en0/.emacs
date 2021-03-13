@@ -14,7 +14,7 @@
 ;;(setq auto-save-default nil)
 
 ;;显示行号
-(global-linum-mode 1)
+;; (global-linum-mode 1)
 
 ;;开启最近打开的文件功能
 (recentf-mode 1)
@@ -158,7 +158,7 @@
            (compilation-ask-about-save nil))
       (executable-interpret (read-shell-command "Run: " command)))))
 
-(define-key python-mode-map [f5] 'python/run-current-file)
+;; (define-key python-mode-map [f5] 'python/run-current-file) 
 
 ;; js2 flycheck
 (add-hook 'js2-mode-hook 'flycheck-mode)

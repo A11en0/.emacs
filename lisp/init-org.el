@@ -10,26 +10,26 @@
 
 ;; org-agenda 自定义配置
 (setq org-agenda-custom-commands
-        '(
-          ("w" . "任务安排")
-          ("wa" "重要且紧急的任务" tags-todo "+PRIORITY=\"A\"")
-          ("wb" "重要且不紧急的任务" tags-todo "-weekly-monthly-daily+PRIORITY=\"B\"")
-          ("wc" "不重要且紧急的任务" tags-todo "+PRIORITY=\"C\"")
-          ("W" "Weekly Review"
-           ((stuck "") ;; review stuck projects as designated by org-stuck-projects
-            (tags-todo "project")
-            (tags-todo "daily")
-            (tags-todo "weekly")
-            (tags-todo "school")
-            (tags-todo "code")
-            (tags-todo "theory")
-            ))
+      '(
+        ("w" . "任务安排")
+        ("wa" "重要且紧急的任务" tags-todo "+PRIORITY=\"A\"")
+        ("wb" "重要且不紧急的任务" tags-todo "-weekly-monthly-daily+PRIORITY=\"B\"")
+        ("wc" "不重要且紧急的任务" tags-todo "+PRIORITY=\"C\"")
+        ("W" "Weekly Review"
+         ((stuck "") ;; review stuck projects as designated by org-stuck-projects
+          (tags-todo "project")
+          (tags-todo "daily")
+          (tags-todo "weekly")
+          (tags-todo "school")
+          (tags-todo "code")
+          (tags-todo "theory")
           ))
+        ))
 
 (setq org-todo-keywords
-    '((sequence "BUG(b!)" "|" "FIXED(f!)")
-      (sequence "TODO(t!)" "SOMEDAY(s)" "|" "DONE(d!)" "CANCELED(c @/!)")
-     ))
+      '((sequence "BUG(b!)" "|" "FIXED(f!)")
+	(sequence "TODO(t!)" "SOMEDAY(s)" "|" "DONE(d!)" "CANCELED(c @/!)")
+	))
 
 ;; (setq org-capture-templates
 ;;       '(("t" "Todo" entry (file+headline "~/.emacs.d/gtd.org" "工作安排")
@@ -38,36 +38,36 @@
 
 ;; 这边就是为路径赋值
 (defvar org-agenda-dir "" "gtd org files location")
-  (setq-default org-agenda-dir "~/gtd/")
-  (setq org-agenda-file-note (expand-file-name "notes.org" org-agenda-dir))
-  (setq org-agenda-file-task (expand-file-name "task.org" org-agenda-dir))
-  (setq org-agenda-file-calendar (expand-file-name "calendar.org" org-agenda-dir))
-  (setq org-agenda-file-finished (expand-file-name "finished.org" org-agenda-dir))
-  (setq org-agenda-file-canceled (expand-file-name "canceled.org" org-agenda-dir))
+(setq-default org-agenda-dir "~/gtd/")
+(setq org-agenda-file-note (expand-file-name "notes.org" org-agenda-dir))
+(setq org-agenda-file-task (expand-file-name "task.org" org-agenda-dir))
+(setq org-agenda-file-calendar (expand-file-name "calendar.org" org-agenda-dir))
+(setq org-agenda-file-finished (expand-file-name "finished.org" org-agenda-dir))
+(setq org-agenda-file-canceled (expand-file-name "canceled.org" org-agenda-dir))
 
 ;; 添加每次打开时可添加的任务类型
-  (setq org-capture-templates
-        '(
-          ("t" "Todo" entry (file+headline org-agenda-file-task "Work")
-           "* TODO [#B] %?\n  %i\n"
-           :empty-lines 1)
-          ("l" "Tolearn" entry (file+headline org-agenda-file-task "Learning")
-           "* TODO [#B] %?\n  %i\n"
-           :empty-lines 1)
-          ("h" "Toplay" entry (file+headline org-agenda-file-task "Hobbies")
-           "* TODO [#C] %?\n  %i\n"
-           :empty-lines 1)
-          ("o" "Todo_others" entry (file+headline org-agenda-file-task "Others")
-           "* TODO [#C] %?\n  %i\n"
-           :empty-lines 1)
-          ("n" "notes" entry (file+headline org-agenda-file-note "Quick notes")
-           "* %?\n  %i\n %U"
-           :empty-lines 1)
-          ("i" "ideas" entry (file+headline org-agenda-file-note "Quick ideas")
-           "* %?\n  %i\n %U"
-           :empty-lines 1)
-          )
+(setq org-capture-templates
+      '(
+        ("t" "Todo" entry (file+headline org-agenda-file-task "Work")
+         "* TODO [#B] %?\n  %i\n"
+         :empty-lines 1)
+        ("l" "Tolearn" entry (file+headline org-agenda-file-task "Learning")
+         "* TODO [#B] %?\n  %i\n"
+         :empty-lines 1)
+        ("h" "Toplay" entry (file+headline org-agenda-file-task "Hobbies")
+         "* TODO [#C] %?\n  %i\n"
+         :empty-lines 1)
+        ("o" "Todo_others" entry (file+headline org-agenda-file-task "Others")
+         "* TODO [#C] %?\n  %i\n"
+         :empty-lines 1)
+        ("n" "notes" entry (file+headline org-agenda-file-note "Quick notes")
+         "* %?\n  %i\n %U"
+         :empty-lines 1)
+        ("i" "ideas" entry (file+headline org-agenda-file-note "Quick ideas")
+         "* %?\n  %i\n %U"
+         :empty-lines 1)
         )
+      )
 
 ;; (setq org-capture-templates
 ;;       `(("t" "task" entry (file "~/Personal/gtd/inbox.org")
@@ -106,10 +106,10 @@
 
 ;;  org-mode 8.0
 ;; (setq org-latex-pdf-process '("xelatex -interaction nonstopmode %f"
-                              ;; "xelatex -interaction nonstopmode %f"))
+;; "xelatex -interaction nonstopmode %f"))
 ;; (setq org-latex-pdf-process (list "latexmk -shell-escape %f"))
 (setq org-latex-pdf-process (list
-   "latexmk -pdflatex='xelatex -shell-escape -interaction nonstopmode' -pdf -f  %f"))
+			     "latexmk -pdflatex='xelatex -shell-escape -interaction nonstopmode' -pdf -f  %f"))
 
 (use-package org-pdfview
   :init (pdf-tools-install)
@@ -138,5 +138,33 @@
      (org-archive-subtree)
      (setq org-map-continue-from (outline-previous-heading)))
    "/DONE" 'agenda))
+
+;; (require 'org-download)
+;; ;; Drag-and-drop to `dired`
+;; (add-hook 'dired-mode-hook 'org-download-enable)
+
+(use-package org-download
+  :ensure t 
+  ;;将截屏功能绑定到快捷键：Ctrl + Shift + Y
+  :bind ("C-S-y" . org-download-clipboard)
+  :config
+  (require 'org-download)
+  ;; Drag and drop to Dired
+  (add-hook 'dired-mode-hook 'org-download-enable)
+)
+
+;; (setq org-html-htmlize-output-type 'inline-css)
+(setq org-html-htmlize-output-type 'css)
+
+;; 导出图片时设置图片size需要用到
+(setq org-export-allow-bind-keywords t)
+
+;; 导出PDF时有代码块
+(setq org-latex-listings 'minted)
+(add-to-list 'org-latex-packages-alist '("" "minted"))
+
+;; 自动换行
+;; (add-hook 'org-mode-hook (lambda () (setq toggle-truncate-lines t)))
+(global-visual-line-mode 1) ; 1 for on, 0 for off.
 
 (provide 'init-org)

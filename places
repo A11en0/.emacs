@@ -1,0 +1,69 @@
+;;; -*- coding: utf-8 -*-
+(("/home/allen/config.json" . 3510)
+ ("/home/allen/gtd/plan.org" . 2841)
+ ("/home/allen/Documents/Beamer-HFUT/"
+  (dired-filename . "/home/allen/Documents/Beamer-HFUT/example.tex"))
+ ("/home/allen/Documents/Beamer-HFUT/example.tex" . 182)
+ ("/home/allen/.emacs.d/persp-confs/persp-auto-save" . 1103)
+ ("/home/allen/Documents/English-Homework/"
+  (dired-filename . "/home/allen/Documents/English-Homework/task3.bbl"))
+ ("/home/allen/"
+  (dired-filename . "/home/allen/18-19-2-大数据教学资源"))
+ ("/home/allen/Documents/Thesis-read/"
+  (dired-filename . "/home/allen/Documents/Thesis-read/org"))
+ ("/home/allen/Documents/Thesis-read/org/"
+  (dired-filename . "/home/allen/Documents/Thesis-read/org/report-4"))
+ ("/home/allen/Documents/Thesis-read/org/report-4/"
+  (dired-filename . "/home/allen/Documents/Thesis-read/org/report-4/report-4.org"))
+ ("/home/allen/Documents/Thesis-read/org/report-4/report-4.org" . 376)
+ ("/home/allen/celebrity.org" . 5261)
+ ("/home/allen/celebrity.tex" . 5521)
+ ("/home/allen/journal-overview.tex" . 2799)
+ ("/home/allen/Documents/Thesis-read/org/第二周工作报告/第二周工作报告.org" . 3843)
+ ("/home/allen/Documents/Thesis-read/org/report-4/report-4.odt" . 169)
+ ("/home/allen/Documents/Thesis-read/org/report-3/report-3.org" . 2380)
+ ("/home/allen/Documents/Thesis-read/org/report-3/"
+  (dired-filename . "/home/allen/Documents/Thesis-read/org/report-3/report-3.org"))
+ ("/home/allen/Documents/Thesis-read/org/第二周工作报告/"
+  (dired-filename . "/home/allen/Documents/Thesis-read/org/第二周工作报告/第二周工作报告.org"))
+ ("/home/allen/Documents/Thesis-read/org/第三周工作报告/"
+  (dired-filename . "/home/allen/Documents/Thesis-read/org/第三周工作报告/third-weekly.org"))
+ ("/home/allen/Documents/Thesis-read/org/Attention_is_All_you_need/"
+  (dired-filename . "/home/allen/Documents/Thesis-read/org/Attention_is_All_you_need/Attention_is_All_you_need.org"))
+ ("/home/allen/Documents/Thesis-read/org/Attention_is_All_you_need/Attention_is_All_you_need.org" . 1334)
+ ("/home/allen/Documents/Thesis-read/org/report-4/report-4.tex" . 8853)
+ ("/home/allen/Code/python/test.py" . 24)
+ ("/home/allen/.emacs.d/lisp/init-org.el" . 1854)
+ ("/home/allen/Documents/Thesis-read/org/极大似然估计/极大似然估计.org" . 819)
+ ("/home/allen/Documents/Thesis-read/org/极大似然估计/"
+  (dired-filename . "/home/allen/Documents/Thesis-read/org/极大似然估计/极大似然估计.org"))
+ ("/home/allen/Documents/Thesis-read/org/极大似然估计/极大似然估计.tex" . 2670)
+ ("/home/allen/Documents/高考政策/"
+  (dired-filename . "/home/allen/Documents/高考政策/main.org"))
+ ("/home/allen/Documents/高考政策/main.org" . 680)
+ ("/home/allen/Documents/Thesis-read/orgmode-latex-templates/"
+  (dired-filename . "/home/allen/Documents/Thesis-read/orgmode-latex-templates/scientific-writing"))
+ ("/home/allen/Documents/Thesis-read/orgmode-latex-templates/scientific-writing/"
+  (dired-filename . "/home/allen/Documents/Thesis-read/orgmode-latex-templates/scientific-writing/scientific.org"))
+ ("/home/allen/Documents/Thesis-read/orgmode-latex-templates/scientific-writing/scientific.org" . 1852)
+ ("/home/allen/Documents/高考政策/main.tex" . 9506)
+ ("/home/allen/Documents/"
+  (dired-filename . "/home/allen/Documents/Thesis-read"))
+ ("/home/allen/Documents/Thesis-read/org/report-3/report-3-blx.bib" . 243)
+ ("/home/allen/Documents/Thesis-read/org/report-4/report-4-blx.bib" . 332)
+ ("/home/allen/Documents/Thesis-read/orgmode-latex-templates/scientific-writing/scientific.tex" . 2325)
+ ("/home/allen/.emacs.d/"
+  (dired-filename . "/home/allen/.emacs.d/auto-save-list"))
+ ("/home/allen/Code/cpp/hello.c" . 63)
+ ("/home/allen/Code/python/.ipynb_checkpoints/A Visual Notebook to Using BERT for the First TIme-checkpoint.ipynb" . 435)
+ ("/home/allen/Code/python/crikets.py" . 171)
+ ("/home/allen/Code/"
+  (dired-filename . "/home/allen/Code/algo"))
+ ("/home/allen/Code/algo/"
+  (dired-filename . "/home/allen/Code/algo/DP1.java"))
+ ("/home/allen/.emacs.d/README.md" . 403)
+ ("/home/allen/.emacs.d/lisp/"
+  (dired-filename . "/home/allen/.emacs.d/lisp/init-window.el"))
+ ("/home/allen/.emacs.d/lisp/init-ui.el" . 21903)
+ ("/home/allen/.emacs.d/init.el" . 4977)
+ ("/home/allen/.emacs.d/recentf" . 1275))

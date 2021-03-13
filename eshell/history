@@ -1,0 +1,4 @@
+python
+docker list
+docker ps -a
+docker attach 83bf5965a089

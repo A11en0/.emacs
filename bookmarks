@@ -1,0 +1,10 @@
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*- 
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("org-capture-last-stored"
+ (filename . "~/gtd/notes.org")
+ (front-context-string . "** 概率图模型的学习资料\n\n ")
+ (rear-context-string . "-12 Sat 08:28]\n\n")
+ (position . 1275))
+)

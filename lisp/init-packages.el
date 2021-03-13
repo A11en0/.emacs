@@ -46,9 +46,9 @@
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
 (js2r-add-keybindings-with-prefix "C-c C-m")
 
-(require 'elpy nil t)
-(elpy-enable)
-(setq python-shell-interpreter "python3")
+;; (require 'elpy nil t)
+;; (elpy-enable)
+;; (setq python-shell-interpreter "python3")
 
 (require 'py-autopep8)
 (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
@@ -154,6 +154,13 @@
 
 ;; (add-hook 'dap-stopped-hook
 ;;           (lambda (arg) (call-interactively #'dap-hydra)))
+
+
+;; leetcode
+(setq leetcode-prefer-language "python3")
+(setq leetcode-prefer-sql "mysql")
+(setq leetcode-save-solutions t)
+(setq leetcode-directory "~/leetcode")
 
 (provide 'init-packages)
 
